@@ -39,8 +39,6 @@ def requestsend():
 
 
 # Choisir entre NMAP et requests
-
-
 def choosing():
     chooser = input("NMAP ou Requests? ")
     if chooser == "NMAP":
@@ -49,7 +47,6 @@ def choosing():
         requestsend()
 
 # Utiliser TOR
-
 def torusage():
     if __name__ == "__main__":
         session = requests.session()
@@ -61,8 +58,6 @@ def torusage():
 
 
 # Utiliser une connection TOR
-
-
 accesstor=input("Voulez vous utiliser un proxy TOR ?")
 if accesstor == "o":
     torusage()
