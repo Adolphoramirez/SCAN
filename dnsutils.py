@@ -33,8 +33,6 @@ def dnskey():
     for item in result:
         print(item)
 
-
-
 def reversename():
 
     userinputs = input("Donnez moi l'adresse IP à reverse : ")
