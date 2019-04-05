@@ -3,7 +3,7 @@ import dns.name
 
 def main():
 
-    chooser = input("Tu veux faire quoi batard ? ( MX/KEY/reverser/analyzer) : ")
+    chooser = input("Que veux tu faire ? ( MX/KEY/reverser/analyzer) : ")
     if chooser == "KEY":
         dnskey()
     elif chooser == "reverser" :
@@ -16,14 +16,12 @@ def main():
 def mxcheck():
 
         try:
-            userinput = input("Donnez-moi le domaine à tester :  ")
+            userinput = input("Donne-moi le domaine à tester :  ")
             answers = dns.resolver.query(userinput, 'MX')
             for rdata in answers:
                 print('Host', rdata.exchange, "has preference", rdata.preference)
         except:
             print("Pas de réponse du serveur DNS")
-
-
 
 def dnskey():
 
